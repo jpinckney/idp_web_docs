@@ -49,3 +49,14 @@ or maybe allow the user to have a profile image and they can update or delete th
 endpoints will need to check for category and id for topic
 app.get('/api/:category/:id)
 app.get('/api/react/1)
+
+
+
+category is hard coded with categories like react js html ect
+
+topic_note_id = is the number associated with the topic
+
+topic = arrays, objects ect
+
+sub topic = the actual array method names, 'new' object keyword ect
+

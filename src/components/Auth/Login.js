@@ -42,6 +42,7 @@ class Login extends Component {
     const {username, password} = this.state
     return (
       <div>
+        <h5>Login</h5>
         <input placeholder='Username..'
           value={ username }
           onChange={ e => this.onInputChange('username', e.target.value) }></input>

@@ -46,7 +46,7 @@ class Register extends Component {
     const { username, password, email } = this.state
     return (
       <div>
-        Register
+        <h5>Register</h5>
         <input placeholder='Username..'
           value={ username }
           onChange={ e => this.onInputChange('username', e.target.value) }></input>

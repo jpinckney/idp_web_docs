@@ -4,7 +4,7 @@ export default class Mainpage extends Component {
   render() {
     return (
       <div>
-        
+        {this.props.children}
       </div>
     )
   }

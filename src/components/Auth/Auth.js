@@ -15,6 +15,7 @@ class Auth extends Component {
       showRegister: false
     }
   }
+  
 // Auth is in control of what is being rendered based on if a user is logged in or logged out
 
 

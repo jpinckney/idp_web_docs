@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './components/nav/Navbar'
+import Navbar from './components/Navbar/Navbar'
 import routes  from './routes'
+import Mainpage from './components/Mainpage/Mainpage'
 
 class App extends Component {
 
@@ -12,8 +13,10 @@ class App extends Component {
       <div className="App">
         <Navbar />
         { routes }
-        {/* <Login /> */}
+        <Mainpage/> 
       </div>
+      
+      
     );
   }
 }

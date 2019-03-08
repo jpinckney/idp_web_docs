@@ -6,6 +6,7 @@ export default class Navbar extends Component {
     return (
       <div className='navbar'>
         <Auth />
+        
       </div>
     )
   }

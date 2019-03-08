@@ -4,6 +4,7 @@ const express = require('express'),
   session = require('express-session'),
   massive = require('massive'),
   ctrl = require('./controller/login'),
+  ctrl2 = require('./controller/controller')
   pg = require('pg')
 pgSession = require('connect-pg-simple')(session)
 
@@ -43,3 +44,6 @@ app.get('/auth/current-user', ctrl.checkForUser)
 app.post('/auth/login', ctrl.login)
 app.post('/auth/logout', ctrl.logout)
 // user end
+
+// app.get('/category', ctrl.selectCategory)
+// app.post('/user_note', ctrl2.user_note)

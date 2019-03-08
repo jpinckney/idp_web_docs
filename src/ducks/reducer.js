@@ -1,7 +1,9 @@
 const initialState = {
   id: 0,
   username: '',
-  email: ''
+  email: '',
+  title: '',
+  usernotes: ''
 }
 
 // ACTION TYPES

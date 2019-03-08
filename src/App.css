@@ -31,3 +31,26 @@
     transform: rotate(360deg);
   }
 }
+
+.input_text_area {
+  width: 200px;
+}
+textarea {
+  resize: none;
+  height: 200px;
+  width: 75%;
+  border-radius: 5px;
+}
+
+.devicons {
+  height: 100px;
+}
+
+.textarea_border {
+width: 500px;
+border: solid black 1px;
+padding: 9px;
+border-radius: 5px;
+margin: 0 auto;
+padding-bottom: 50px;
+}

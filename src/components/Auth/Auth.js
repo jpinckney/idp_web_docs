@@ -40,7 +40,7 @@ class Auth extends Component {
     const { id } = this.props
     if (!id) {
       try {
-        let res = await axios.get('/auth/current-user')
+        let res = await axios.get('/api/auth/current-user')
         console.log(res.data)
         this.props.upload_data(res.data)
         this.toggleLogin()
@@ -81,36 +81,6 @@ class Auth extends Component {
       </div>
     )
   }
-
-//   render() {
-//     console.log(this.props)
-//     const { username, password, email } = this.state
-//     return (
-//       <div>
-//         <input placeholder='Username..'
-//           value={ username }
-//           onChange={ e => this.onInputChange('username', e.target.value) }></input>
-//         <input placeholder='Password..'
-//           value={ password }
-//           onChange={ e => this.onInputChange('password', e.target.value) }></input>
-//         <input placeholder='Email..'
-//           value={ email }
-//           onChange={ e => this.onInputChange('email', e.target.value) }></input>
-
-        
-
-//         {/* { this.props.username ? <input>logout</input> : <input>login</input> } */}
-//         { this.props.username !== '' ? 
-//           <button onClick={ this.onLogout }>Logout</button> :
-//           <div>
-//             <button onClick={ this.onLogin }>Login</button>  
-//             <button onClick={ this.onRegister }>Register</button>
-//           </div>
-//         }
-
-//       </div>
-//     )
-//   }
 }
 
 const mapStateToProps = reduxState => {

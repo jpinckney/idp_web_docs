@@ -12,7 +12,7 @@ class Logout extends Component {
   // Logout is responsible for rendering the login component if a user clicks logout 
 
   onLogout = async () => {
-    await axios.post('/auth/logout')
+    await axios.post('/api/auth/logout')
     this.props.upload_data({
       id: 0,
       username: '',

@@ -26,7 +26,7 @@ class Login extends Component {
       password: this.state.password
     }
     try {
-      let res = await axios.post('/auth/login', user)
+      let res = await axios.post('/api/auth/login', user)
       console.log(this)
       this.props.upload_data(res.data)
       this.props.toggleLogin()

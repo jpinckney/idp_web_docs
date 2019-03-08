@@ -20,7 +20,7 @@ class Register extends Component {
       email: this.state.email
     }
     try {
-      let res = await axios.post('/auth/register', user)
+      let res = await axios.post('/api/auth/register', user)
       // console.log(res)
       this.setState({
         username: '',

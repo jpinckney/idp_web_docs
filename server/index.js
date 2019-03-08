@@ -4,7 +4,7 @@ const express = require('express'),
   session = require('express-session'),
   massive = require('massive'),
   ctrl = require('./controller/login'),
-  ctrl2 = require('./controller/controller')
+  ctrl_2 = require('./controller/controller')
   pg = require('pg')
 pgSession = require('connect-pg-simple')(session)
 
@@ -38,12 +38,12 @@ massive(CONNECTION_STRING)
   })
 
 // user start
-app.post('/auth/register', ctrl.register)
-app.get('/auth/current-user', ctrl.checkForUser)
+app.post('/api/auth/register', ctrl.register)
+app.get('/api/auth/current-user', ctrl.checkForUser)
 // user session
-app.post('/auth/login', ctrl.login)
-app.post('/auth/logout', ctrl.logout)
+app.post('/api/auth/login', ctrl.login)
+app.post('/api/auth/logout', ctrl.logout)
 // user end
 
-// app.get('/category', ctrl.selectCategory)
+app.get('/api/docs/:category', ctrl_2.selectCategory)
 // app.post('/user_note', ctrl2.user_note)

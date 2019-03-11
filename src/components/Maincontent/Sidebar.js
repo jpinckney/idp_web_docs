@@ -5,21 +5,27 @@ export default class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      category: '',
+      topic: '',
+      subtopic: ''
     }
   }
 
+// componentDidMount(){
+
+// }
+
+
   render() {
+    const {category} = this.props.match.params
     return (
       <div>
-        {/* <ul> <h4><Link to=''>ghh</Link></h4>
-          <li><Link to=''>adhaa</Link></li>
-          <li></li>
-        </ul> */}
-
-        <Link to={`/docs/${'reactjs'}`}><h5>React</h5></Link>
-        <Link to={`/docs/${'javascript'}`}><h5>Javacript</h5></Link>
-        <Link to={`/docs/${'html'}`}><h5>HTML</h5></Link>
+        {/** ! Permanent Links */}
+        <Link to={ `/api/docs/${category}` }><h5>React</h5></Link>
+        <Link to={ `/api/docs/${category}` }><h5>Javacript</h5></Link>
+        <Link to={ `/api/docs/${category}` }><h5>HTML</h5></Link>
+        {/** ! Permanent Links */}
+        
         {/* <Link></Link>
         <Link></Link>
         <Link></Link>

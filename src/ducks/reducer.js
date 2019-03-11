@@ -3,7 +3,8 @@ const initialState = {
   username: '',
   email: '',
   title: '',
-  usernotes: ''
+  usernotes: '',
+  category: []
 }
 
 // ACTION TYPES

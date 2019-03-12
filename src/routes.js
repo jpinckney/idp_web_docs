@@ -8,6 +8,7 @@ export default (
   <Switch>
     <Route exact path='/' component={ Mainpage } />
     <Route path='/docs/:category' component={Maincontent} /> 
-    {/* <Route path='/docs/:category/:topic/:subtopic' component={Maincontent} />  */}
+    <Route path='/docs/:category/:topic' component={Maincontent} /> 
+    {/* <Route path='/docs/:category/:topic/:subtopic' component={} />  */}
   </Switch>
 )

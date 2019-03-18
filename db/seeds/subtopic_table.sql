@@ -9,6 +9,13 @@ example varchar(500),
 topic_id integer
 )
 
+
+
+
+/** 
+* ! Objects
+*/
+
 insert into subtopic
 (subtopic, description, syntax, syntax_explaination, example, topic_id)
 values('object.assign()', 'this is the description of object.assign()', 'here is some syntax', 'the explanation of syntax which ill probably delete this column', 'basic usage of object.assign()',1);
@@ -16,6 +23,10 @@ values('object.assign()', 'this is the description of object.assign()', 'here is
 insert into subtopic
 (subtopic, description, syntax, syntax_explaination, example,topic_id)
 values('object.create()', 'what is object.create()?', 'Object.create(proto, [propertiesObject])', 'well maybe ill keep the syntax explaination', 'examples',1);
+
+/** 
+* ! Arrays
+*/
 
 insert into subtopic
 (subtopic, description, syntax, syntax_explaination, example,topic_id)
@@ -30,6 +41,10 @@ values('array.filter()', 'The filter() method creates a new array with all eleme
 insert into subtopic
 (subtopic, description, syntax, syntax_explaination, example, topic_id)
 values('array.splice()', 'The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.', 'array.splice(start[, deleteCount[, item1[, item2[, ...]]]])','explain this syntax to me plox', 'examples of dis splice',2);
+
+/** 
+* ! Strings
+*/
 
 insert into subtopic
 (subtopic, description, syntax, syntax_explaination, example,topic_id)

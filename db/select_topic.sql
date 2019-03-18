@@ -1,3 +1,3 @@
 select * 
-from category
+from topic
 where topic = $1

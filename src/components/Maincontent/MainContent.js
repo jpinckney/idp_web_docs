@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import CategoryHeader from './CategoryHeader'
 import Sidebar from './Sidebar';
-// import DetailedView from './DetailedView'
+import DetailedView from './DetailedView'
 
 export default class Main_content extends Component {
   constructor(props) {
@@ -14,17 +14,17 @@ export default class Main_content extends Component {
 
 
 
-  componentDidMount() {
-    const { category } = this.props.match.params
-    console.log({ category })
-    axios.get(`/api/docs/${category}`)
-      .then(res => {
-        console.log(res.data)
-        this.setState({
-          category: res.data
-        })
-      })
-  }
+  // componentDidMount() {
+  //   const { category } = this.props.match.params
+  //   console.log({ category })
+  //   axios.get(`/api/docs/${category}`)
+  //     .then(res => {
+  //       console.log(res.data)
+  //       this.setState({
+  //         category: res.data
+  //       })
+  //     })
+  // }
 
 
 
@@ -39,6 +39,10 @@ export default class Main_content extends Component {
           category={ category }
           topic={ topic }
           subtopic={ subtopic }
+        />
+
+        <DetailedView 
+        
         />
 
       </div>

@@ -7,6 +7,16 @@ syntax varchar(500),
 category_id int
 )
 
+
+ 
+
+
+
+
+ /** 
+* ! Javascript
+*/
+
 insert into topic
 (topic, description, syntax, category_id)
 values('object', 'The Object constructor creates an object wrapper.', '// Object initialiser or literal
@@ -24,3 +34,13 @@ new Array(arrayLength)',2);
 insert into topic
 (topic, description, syntax,category_id)
 values('string', 'The String global object is a constructor for strings or a sequence of characters.', '"use double quotes or single quotes to declare a string"',2)
+
+ /** 
+* ! React
+*/
+
+
+
+ /** 
+* ! HTML
+*/

@@ -31,6 +31,7 @@ constructor(props) {
         </Link>
 
         {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" d={`${css3_plain_woodmark}`}></svg> */ }
+
         <Link to={ `/docs/${'html'}` }>
           <svg className='devicons' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#E44D26" d={ `${html5_plain_wordmark}` } /></svg>
         </Link>
@@ -45,6 +46,7 @@ const mapStateToProps = reduxState => {
     category: reduxState.category
   }
 }
+
 const mapDispatchToProps = {
   upload_data
 }

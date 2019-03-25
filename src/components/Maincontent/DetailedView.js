@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { upload_data } from '../../ducks/reducer'
 
-class Subtopic extends Component {
+class DetailedView extends Component {
 
 
   componentDidMount() {
@@ -10,11 +12,11 @@ class Subtopic extends Component {
   }
 
   dataSelector = () => {
-    const { topic, subtopic, category} = this.props.match.params
+    const { topic, subtopic, category } = this.props.match.params
     axios.get(`/api/docs/getData/${category}/${topic}/${subtopic}`)
       .then(res => {
         console.log({ res })
-      // setstate with the data and then render it
+        this.props.upload_data(res.data)
       })
   }
 
@@ -23,14 +25,21 @@ class Subtopic extends Component {
     console.log(this.props.match.params)
     console.log(this.props.match)
     return (
-      <div className='detailedView'>
-        
+      <div>
+
         Detailed View
-        <h1>{this.props.topic}</h1>
       </div>
     )
   }
 }
 
+const mapStateToProps = reduxState => {
+  return {
+    category: reduxState.category
+  }
+}
+const mapDispatchToProps = {
+  upload_data
+}
 
-export default withRouter(Subtopic)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DetailedView))

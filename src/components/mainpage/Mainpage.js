@@ -19,12 +19,7 @@ import { upload_data } from '../../ducks/reducer'
 // https://icongr.am/devicon
 
 class Mainpage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: []
-    }
-  }
+ 
 
 
   render() {

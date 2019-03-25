@@ -5,33 +5,31 @@ import Sidebar from './Sidebar';
 import DetailedView from './DetailedView'
 
 export default class Main_content extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: []
-    }
-  }
+ 
 
 
 
-  
-  
-  
+
+
+
   render() {
     const { category, topic, subtopic } = this.props.match.params
+
     return (
       <div>
         <CategoryHeader
           title={ category }
-          />
+        />
         <Sidebar
           category={ category }
           topic={ topic }
           subtopic={ subtopic }
-          />
+        />
 
-        <DetailedView 
-        
+        <DetailedView
+          category={ category }
+          topic={ topic }
+          subtopic={ subtopic }
         />
 
       </div>

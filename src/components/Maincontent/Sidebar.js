@@ -3,15 +3,6 @@ import { Link } from 'react-router-dom'
 // import axios from 'axios'
 
 export default class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: []
-    }
-  }
-
-
-
 
   render() {
     const { category, topic, subtopic } = this.props

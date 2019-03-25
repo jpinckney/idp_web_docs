@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Navbar from '../Navbar/Navbar'
 // import Sidebar from '../Sidebar/Sidebar'
 import Reacted from '../../icons/Reacted'
 import HTML from '../../icons/HTML'
@@ -31,7 +30,7 @@ class Mainpage extends Component {
   render() {
     return (
       <div >
-       
+
         <div className='devicons'>
 
           <Link to={ '/docs/reactjs' }>
@@ -50,7 +49,7 @@ class Mainpage extends Component {
             <NodeIcon />
           </Link>
           <Link to={ '/docs/css' }>
-            <Css/>
+            <Css />
           </Link>
         </div>
       </div>

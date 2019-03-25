@@ -23,9 +23,10 @@ class Subtopic extends Component {
     console.log(this.props.match.params)
     console.log(this.props.match)
     return (
-      <div>
+      <div className='detailedView'>
         
         Detailed View
+        <h1>{this.props.topic}</h1>
       </div>
     )
   }

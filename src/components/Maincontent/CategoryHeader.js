@@ -12,8 +12,9 @@ export default class CategoryHeader extends Component {
   render() {
     console.log(this.props)
     return (
-      <div>
-        <h1>{ this.props.title }</h1>
+      <div className='categoryHeader'>
+        
+        <h1>Welcome to { this.props.title }</h1>
       </div>
     )
   }

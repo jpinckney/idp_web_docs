@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Auth from '../Auth/Auth'
-// import Logo from '../../icons/Logo.png'
 import Idp_web_docs from '../../icons/idp_web-docs.png'
 
 export default class Navbar extends Component {
@@ -13,7 +12,7 @@ export default class Navbar extends Component {
           <span className='subtitle'>Welcome Scrub</span>
         </p>
         <Auth />
-      
+
       </div>
     )
   }

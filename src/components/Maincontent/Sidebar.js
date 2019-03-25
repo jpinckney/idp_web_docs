@@ -17,13 +17,16 @@ export default class Sidebar extends Component {
     const { category, topic, subtopic } = this.props
     console.log(this.props)
     return (
-      <div>
-        {/** ! Permanent Links */ }
-        <Link to={ `/docs/react` }><h5>React</h5></Link>
-        <Link to={ `/docs/javascript` }><h5>Javascript</h5></Link>
-        <Link to={ `/docs/html` }><h5>HTML</h5></Link>
-        {/** ! Permanent Links */ }
-        {/** need to finish the above to have permanent links for the different categories */ }
+      <div className='border'>
+
+        <div className='permanentLinks'>
+          <Link to={ `/docs/react` }><h5>React</h5></Link>
+          <Link to={ `/docs/javascript` }><h5>Javascript</h5></Link>
+          <Link to={ `/docs/html` }><h5>HTML</h5></Link>
+          {/** ! Permanent Links */ }
+        </div>
+
+
 
 
 
@@ -31,23 +34,26 @@ export default class Sidebar extends Component {
         <h1>{ this.props.topic }</h1>
         <h2>{ this.props.subtopic }</h2>
 
-        <Link to={ `/docs/javascript/objects` }><h4>Objects</h4></Link>
+        <div className='topicLinks'>
+          <Link to={ `/docs/javascript/objects` }><h4>Objects</h4></Link>
+          <Link to={ `/docs/javascript/arrays` }><h4>Arrays</h4></Link>
+          <Link to={ `/docs/javascript/strings` }><h4>Strings</h4></Link>
+        </div>
 
-        <Link to={ `/docs/javascript/objects/object.assign` }><h6>Object.Assign</h6></Link>
-        <Link to={ `/docs/javascript/objects/object.create` }><h6>Object.Create</h6></Link>
-        
-        <Link to={ `/docs/javascript/arrays` }><h4>Arrays</h4></Link>
+        <div className='subtopicLinks'>
+          <Link to={ `/docs/javascript/objects/object.assign` }><h6>Object.Assign</h6></Link>
+          <Link to={ `/docs/javascript/objects/object.create` }><h6>Object.Create</h6></Link>
 
-        <Link to={ `/docs/javascript/arrays/array.map` }><h6>Array.map</h6></Link>
-        <Link to={ `/docs/javascript/arrays/array.filter` }><h6>Array.filter</h6></Link>
-        <Link to={ `/docs/javascript/arrays/array.splice` }><h6>Array.splice</h6></Link>
 
-        <Link to={ `/docs/javascript/strings` }><h4>Strings</h4></Link>
+          <Link to={ `/docs/javascript/arrays/array.map` }><h6>Array.map</h6></Link>
+          <Link to={ `/docs/javascript/arrays/array.filter` }><h6>Array.filter</h6></Link>
+          <Link to={ `/docs/javascript/arrays/array.splice` }><h6>Array.splice</h6></Link>
 
-        <Link to={ `/docs/javascript/strings/string.length` }><h6>String.length</h6></Link>
-        <Link to={ `/docs/javascript/strings/string.toUpperCase` }><h6>String.toUpperCase</h6></Link>
-        <Link to={ `/docs/javascript/strings/string.toLowerCase` }><h6>String.toLowerCase</h6></Link>
 
+          <Link to={ `/docs/javascript/strings/string.length` }><h6>String.length</h6></Link>
+          <Link to={ `/docs/javascript/strings/string.toUpperCase` }><h6>String.toUpperCase</h6></Link>
+          <Link to={ `/docs/javascript/strings/string.toLowerCase` }><h6>String.toLowerCase</h6></Link>
+        </div>
       </div>
     )
   }

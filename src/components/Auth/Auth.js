@@ -55,7 +55,7 @@ class Auth extends Component {
   render(){
     console.log(this)
     return(
-      <div>
+      <div className='auth'>
         {this.props.username === '' 
         ?
           <div>

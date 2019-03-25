@@ -9,9 +9,9 @@ import store from './ducks/store'
 
 ReactDOM.render(
   <Provider store={ store }>
-    <HashRouter>
+    {/* <HashRouter> */}
       <App />
-    </HashRouter>
+    {/* </HashRouter> */}
   </Provider>
   , document.getElementById('root'));
 

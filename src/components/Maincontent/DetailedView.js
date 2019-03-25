@@ -14,20 +14,17 @@ class Subtopic extends Component {
     axios.get(`/api/docs/getData/${category}/${topic}/${subtopic}`)
       .then(res => {
         console.log({ res })
-      
+      // setstate with the data and then render it
       })
   }
 
-
-
-
-
   render() {
-const {description} = this.props
+
     console.log(this.props.match.params)
+    console.log(this.props.match)
     return (
       <div>
-        {description}
+        
         Detailed View
       </div>
     )

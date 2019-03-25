@@ -37,15 +37,15 @@ massive(CONNECTION_STRING)
     })
   })
 
-// user start
+// ! user start
 app.post('/api/auth/register', ctrl.register)
 app.get('/api/auth/current-user', ctrl.checkForUser)
-// user session
+// ! user session
 app.post('/api/auth/login', ctrl.login)
 app.post('/api/auth/logout', ctrl.logout)
-// user end
+// ! user end
 
-// app.get('/api/docs/:category/:topic/:subtopic', ctrl_2.selectCategory)
+
 app.get('/api/docs/:category', ctrl_2.selectCategory)
 app.get('/api/docs/:topic',ctrl_2.topic)
 app.get('/api/docs/:topic/:subtopic',ctrl_2.subTopic)

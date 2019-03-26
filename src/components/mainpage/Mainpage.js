@@ -5,20 +5,20 @@ import HTML from '../../icons/HTML'
 import Javascript from '../../icons/Javascript'
 import NodeIcon from '../../icons/NodeIcon'
 import Css from '../../icons/Css'
-
-
-
-
 import { Link } from 'react-router-dom'
-
 import { connect } from 'react-redux'
-import { upload_data } from '../../ducks/reducer'
+import { getAllData } from '../../ducks/actions'
 
 
 
 // https://icongr.am/devicon
 
 class Mainpage extends Component {
+
+  componentDidMount() {
+    this.props.getAllData()
+  }
+
  
 
 
@@ -59,9 +59,9 @@ const mapStateToProps = reduxState => {
   }
 }
 
-const mapDispatchToProps = {
-  upload_data
-}
+const mapDispatchToProps = dispatch => ({
+  getAllData: () => dispatch(getAllData())
+})
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Mainpage)

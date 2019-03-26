@@ -5,7 +5,7 @@ const express = require('express'),
   massive = require('massive'),
   ctrl = require('./controller/login'),
   ctrl_2 = require('./controller/controller')
-  pg = require('pg')
+pg = require('pg')
 pgSession = require('connect-pg-simple')(session)
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
@@ -47,7 +47,8 @@ app.post('/api/auth/logout', ctrl.logout)
 
 
 app.get('/api/docs/:category', ctrl_2.selectCategory)
-app.get('/api/docs/:topic',ctrl_2.topic)
-app.get('/api/docs/:topic/:subtopic',ctrl_2.subTopic)
+app.get('/api/docs', ctrl_2.getAllData)
+app.get('/api/docs/:topic', ctrl_2.topic)
+app.get('/api/docs/:topic/:subtopic', ctrl_2.subTopic)
 // app.post('/user_note', ctrl2.user_note)
 app.get('/api/docs/getData/:category/:topic/:subtopic', ctrl_2.getData)

@@ -4,7 +4,6 @@ export default class CategoryHeader extends Component {
  
 
   render() {
-    console.log(this.props)
     return (
       <div className='categoryHeader'>
         

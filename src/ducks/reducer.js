@@ -1,31 +1,20 @@
+import { GET_ALL_DATA } from './types'
+
 const initialState = {
   id: 0,
   username: '',
   email: '',
   title: '',
   usernotes: '',
-  category: []
+  docs: []
 }
 
-// ACTION TYPES
-const UPLOAD_DATA = 'UPLOAD_DATA'
-
-// ACTION CREATOR
-export function upload_data(data) {
-  console.log({ data })
-  return {
-    type: UPLOAD_DATA,
-    payload: data
-  }
-}
 
 export default function reducer(state = initialState, action) {
-  const { type } = action
-  console.log(type)
+  const { type, payload } = action
   switch (type) {
-
-    case UPLOAD_DATA:
-      return { ...state, category: action.payload }
+    case GET_ALL_DATA:
+      return { ...state, docs: payload }
     default:
       return state
   }

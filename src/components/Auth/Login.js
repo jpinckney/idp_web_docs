@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {upload_data} from '../../ducks/reducer'
 import {connect} from 'react-redux'
 
 class Login extends Component {
@@ -62,5 +61,8 @@ class Login extends Component {
   }
 }
 
-const mapDispatchToProps = {upload_data}
+const mapDispatchToProps = dispatch => {
+  
+}
+
 export default connect('', mapDispatchToProps)(Login)

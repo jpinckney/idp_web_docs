@@ -6,7 +6,6 @@ export default class Sidebar extends Component {
 
   render() {
     const { category, topic, subtopic } = this.props
-    console.log(this.props)
     return (
       <div className='border'>
 

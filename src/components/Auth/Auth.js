@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import { upload_data } from '../../ducks/reducer'
 import Login from './Login'
 import Logout from './Logout'
 import Register from './Register'
@@ -41,7 +40,6 @@ class Auth extends Component {
     if (!id) {
       try {
         let res = await axios.get('/api/auth/current-user')
-        console.log(res.data)
         this.props.upload_data(res.data)
         this.toggleLogin()
         this.toggleLogout()
@@ -53,7 +51,6 @@ class Auth extends Component {
   }
 
   render(){
-    console.log(this)
     return(
       <div className='auth'>
         {this.props.username === '' 
@@ -89,8 +86,9 @@ const mapStateToProps = reduxState => {
     username: reduxState.username
   }
 }
-const mapDispatchToProps = {
-  upload_data
+
+const mapDispatchToProps = dispatch => {
+  
 }
 
 

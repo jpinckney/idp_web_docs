@@ -56,5 +56,12 @@ module.exports = {
     function nope(err) {
       console.log(err)
     }
+  },
+  getAllData: (req, res) => {
+    const db = req.app.get('db')
+    db.select_all_data()
+      .then(resp => {
+        res.status(200).send(resp)
+      })
   }
 }

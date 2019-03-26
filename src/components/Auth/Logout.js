@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import {upload_data} from '../../ducks/reducer'
 
 
 
@@ -33,6 +32,8 @@ class Logout extends Component {
   }
 }
 
-const mapDispatchToProps = { upload_data }
+const mapDispatchToProps = dispatch => {
+  
+}
 
 export default connect('', mapDispatchToProps)(Logout)

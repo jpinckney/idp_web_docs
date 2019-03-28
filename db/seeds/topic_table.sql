@@ -27,13 +27,38 @@ new Array(element0, element1[, ...[, elementN]])
 new Array(arrayLength)',2);
 
 insert into topic
-(topic, topic_description, syntax,category_id)
+(topic, topic_description, syntax, category_id)
 values('string', 'The String global object is a constructor for strings or a sequence of characters.', '"use double quotes or single quotes to declare a string"',2)
 
  /** 
 * ! React
 */
 
+insert into topic
+(topic, topic_description, syntax, category_id)
+values('Props', 'Props is super fun but sometimes confusing AF',1)
+
+insert into topic
+(topic, topic_description, syntax, category_id)
+values('Lifecycle methods', 'The main one you will use is componentDidMount, however componentDidUpdate is also very useful',1)
+
+insert into topic
+(topic, topic_description, syntax, category_id)
+values('State', 'When you hear someone say application state, that simply means what data your application is keeping track of',1)
+
  /** 
 * ! HTML
 */
+
+insert into topic
+(topic, topic_description, syntax, category_id)
+values('Tags', 'HTML tags are neat because they can help you bold with <strong></strong>, or give you a header with <h1></h1>',3)
+
+insert into topic
+(topic, topic_description, syntax, category_id)
+values('Attibutes', 'HTML attributes are tags that contain additional pieces of info "inside" the tags. Here is an example `<img src="mydog.jpg" alt="A photo of my dog.">`',3)
+
+insert into topic
+(topic, topic_description, syntax, category_id)
+values('Golden Rules To Remember', '1. The vast majority of tags must be opened (<tag>) and closed (</tag>) with the element information such as a title or text resting between the tags.
+2. When using multiple tags, the tags must be closed in the order in which they were opened. For example: <strong><em>This is really important!</em></strong>',3)

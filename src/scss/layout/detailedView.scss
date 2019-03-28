@@ -7,12 +7,24 @@
   border: solid 3px;
   border-radius: 3px;
   padding: 15px;
-
-  .topicView {
-
-  }
-  
-  .subtopicView {
-
-  }
 }
+    .topicView {
+      height: fit-content;
+      width: fit-content;
+      font-size: 50px;
+      background-color: red;
+      margin: auto;
+      border: solid 3px;
+      border-radius: 3px;
+      padding: 15px;
+    }
+    .subtopicView {
+      height: fit-content;
+      width: fit-content;
+      font-size: 50px;
+      background-color: red;
+      margin: auto;
+      border: solid 3px;
+      border-radius: 3px;
+      padding: 15px;
+    }

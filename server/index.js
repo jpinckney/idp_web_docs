@@ -47,8 +47,8 @@ app.post('/api/auth/logout', ctrl.logout)
 
 
 app.get('/api/docs/:category', ctrl_2.selectCategory)
-app.get('/api/docs', ctrl_2.getAllData)
 app.get('/api/docs/:topic', ctrl_2.topic)
 app.get('/api/docs/:topic/:subtopic', ctrl_2.subTopic)
 // app.post('/user_note', ctrl2.user_note)
+app.get('/api/docs', ctrl_2.getAllData)
 app.get('/api/docs/getData/:category/:topic/:subtopic', ctrl_2.getData)

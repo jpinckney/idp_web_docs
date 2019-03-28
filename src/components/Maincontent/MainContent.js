@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import CategoryHeader from './CategoryHeader'
 import Sidebar from './Sidebar';
-import DetailedView from './DetailedView'
+import DetailedView from './DetailedView';
+import Doc from './Doc'
 
 export default class Main_content extends Component {
   constructor(props) {
@@ -14,6 +15,10 @@ export default class Main_content extends Component {
 
 
   componentDidMount() {
+    this.categorySelector()
+  }
+
+  categorySelector = () => {
     const { category } = this.props.match.params
     console.log({ category })
     axios.get(`/api/docs/${category}`)
@@ -32,19 +37,17 @@ export default class Main_content extends Component {
     return (
       <div>
         <CategoryHeader
-          title={ category }
+          category={ category }
         />
+        
         <Sidebar
           category={ category }
           topic={ topic }
           subtopic={ subtopic }
         />
 
-        <DetailedView
-          category={ category }
-          topic={ topic }
-          subtopic={ subtopic }
-        />
+        <Doc />
+       
 
       </div>
     )
@@ -58,8 +61,3 @@ export default class Main_content extends Component {
 
 
 
-
-// notsureyet(){
-  //   const {category, topic, subtopic} = this.props.match.params
-  //   axios.get(`/api/docs/${category}/${topic}/${subtopic}`)
-  // }

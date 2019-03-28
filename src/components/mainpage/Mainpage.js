@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Sidebar from '../Sidebar/Sidebar'
 import Reacted from '../../icons/Reacted'
 import HTML from '../../icons/HTML'
 import Javascript from '../../icons/Javascript'
@@ -18,9 +17,6 @@ class Mainpage extends Component {
   componentDidMount() {
     this.props.getAllData()
   }
-
- 
-
 
   render() {
     return (

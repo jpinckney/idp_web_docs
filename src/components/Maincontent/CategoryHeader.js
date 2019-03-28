@@ -7,7 +7,7 @@ export default class CategoryHeader extends Component {
     return (
       <div className='categoryHeader'>
         
-        <h1>Welcome to { this.props.title }</h1>
+        <h1>Welcome to { this.props.category }</h1>
       </div>
     )
   }

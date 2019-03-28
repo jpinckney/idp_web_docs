@@ -1,4 +1,4 @@
-.detailedView {
+.categoryView {
   height: fit-content;
   width: fit-content;
   font-size: 50px;
@@ -7,5 +7,12 @@
   border: solid 3px;
   border-radius: 3px;
   padding: 15px;
+
+  .topicView {
+
+  }
   
+  .subtopicView {
+
+  }
 }

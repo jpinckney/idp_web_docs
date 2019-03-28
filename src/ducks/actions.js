@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, DATA_SELECTOR } from './types'
+import { GET_ALL_DATA } from './types'
 import axios from 'axios'
 
 export const getAllData = () => dispatch => {

@@ -42,11 +42,9 @@ const mapStateToProps = reduxState => {
     docs: reduxState.docs
   }
 }
-const mapDispatchToProps = dispatch => {
 
-}
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Sidebar))
+export default withRouter(connect(mapStateToProps)(Sidebar))
 
 
 

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import CategoryHeader from './CategoryHeader'
 import Sidebar from './Sidebar';
-import DetailedView from './DetailedView';
-import Doc from './Doc'
+import ConditionalRenderingComponents from './ConditionalRenderingComponents'
 
 export default class Main_content extends Component {
   constructor(props) {
@@ -39,15 +38,16 @@ export default class Main_content extends Component {
         <CategoryHeader
           category={ category }
         />
-        
+
         <Sidebar
           category={ category }
           topic={ topic }
           subtopic={ subtopic }
         />
+        {/** maybe i can create a ConditionalRender component... this component will be in charge of the logic of the ternary below. thus allowing me to remove the ternary and to just render the ConditionalRender component*/ }
 
-        <Doc />
-       
+        <ConditionalRenderingComponents {...this.props}/>
+
 
       </div>
     )

@@ -5,18 +5,20 @@ import SubtopicFind from './FindDocs/SubtopicFind'
 
 export default function ConditionalRenderingComponents(props) {
 
-  console.log(11111111111, props)
   const { category, topic, subtopic } = props.match.params
 
   if (category && topic && subtopic) {
+    console.log('hit subtopic')
     return (
       <SubtopicFind />
     )
   } else if (category && topic) {
+    console.log('hit topic')
     return (
       <TopicFind />
     )
   } else {
+    console.log('hit category')
     return <CategoryFind />
   }
 }

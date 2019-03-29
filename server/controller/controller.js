@@ -5,13 +5,12 @@ module.exports = {
   //   let newnote = db.submit_user_note({title, usernote})
   // }
 
+  // MainContent.js
   selectCategory: (req, res) => {
     console.log('hit select category')
     const db = req.app.get('db')
-    // console.log(req.params.category)
     db.select_category(req.params.category)
       .then(resp => {
-        // console.log(resp)
         res.status(200).send(resp)
       })
   },

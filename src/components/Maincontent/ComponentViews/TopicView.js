@@ -7,6 +7,7 @@ export default class SubtopicView extends Component {
   render() {
     console.log( 'topic view props',this.props)
     const { topic } = this.props
+    console.log({topic})
     return (
       <div className='topicView'>
         

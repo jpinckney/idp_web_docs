@@ -51,7 +51,7 @@ class Mainpage extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    category: reduxState.category
+    docs: reduxState.docs
   }
 }
 

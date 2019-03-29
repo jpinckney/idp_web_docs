@@ -9,14 +9,11 @@ class TopicFind extends Component {
   render() {
     const { docs } = this.props
     const { topic } = this.props.match.params
-
+    console.log(docs.find(i => i.topic === topic))
+    
     // filter using this.props.match.params
     // const filteredDocs = docs.filter(doc => {
-
     // })
-
-   
-
     const TopicDoc = docs.find(i => i.topic === topic);
     console.log(333333333, TopicDoc)
     console.log(22222222, this.props)
@@ -31,16 +28,11 @@ class TopicFind extends Component {
   }
 }
 
-
-
 const mapStateToProps = reduxState => {
   return {
     docs: reduxState.docs
   }
 }
-const mapDispatchToProps = dispatch => {
 
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TopicFind))
+export default withRouter(connect(mapStateToProps)(TopicFind))
 

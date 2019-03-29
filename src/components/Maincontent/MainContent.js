@@ -17,12 +17,33 @@ export default class Main_content extends Component {
     this.categorySelector()
   }
 
+  // This method is responsible for selecting the category that the user clicked on from the mainpage icons
+
   categorySelector = () => {
     const { category } = this.props.match.params
     console.log({ category })
     axios.get(`/api/docs/${category}`)
       .then(res => {
-        console.log(res.data)
+        this.setState({
+          category: res.data
+        })
+      })
+  }
+
+  // componentDidUpdate excpects prevProps as an argument. Therefore the condition must be in componentDidUpdate instead of the categoryUpdater method
+
+  componentDidUpdate(prevProps) {
+    const { category } = this.props.match.params
+    if (category !== prevProps.match.params.category) {
+      this.categoryUpdater()
+    }
+  }
+
+
+  categoryUpdater = () => {
+    const { category } = this.props.match.params
+    axios.get(`/api/docs/${category}`)
+      .then(res => {
         this.setState({
           category: res.data
         })
@@ -31,6 +52,7 @@ export default class Main_content extends Component {
 
 
   render() {
+    console.log(this.state.category)
     const { category, topic, subtopic } = this.props.match.params
 
     return (
@@ -44,15 +66,18 @@ export default class Main_content extends Component {
           topic={ topic }
           subtopic={ subtopic }
         />
-        {/** maybe i can create a ConditionalRender component... this component will be in charge of the logic of the ternary below. thus allowing me to remove the ternary and to just render the ConditionalRender component*/ }
 
-        <ConditionalRenderingComponents {...this.props}/>
+        <ConditionalRenderingComponents
+          { ...this.props }
+        />
 
 
       </div>
     )
   }
 }
+
+
 
 
 

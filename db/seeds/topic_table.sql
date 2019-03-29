@@ -35,27 +35,23 @@ values('string', 'The String global object is a constructor for strings or a seq
 */
 
 insert into topic
-(topic, topic_description, syntax, category_id)
-values('Props', 'Props is super fun but sometimes confusing AF',1)
+(topic, topic_description, category_id)
+values('Main Concepts', 'These are fundamental concepts that will allow us to build basic and useful applications', 1)
 
 insert into topic
-(topic, topic_description, syntax, category_id)
+(topic, topic_description, category_id)
 values('Lifecycle methods', 'The main one you will use is componentDidMount, however componentDidUpdate is also very useful',1)
-
-insert into topic
-(topic, topic_description, syntax, category_id)
-values('State', 'When you hear someone say application state, that simply means what data your application is keeping track of',1)
 
  /** 
 * ! HTML
 */
 
 insert into topic
-(topic, topic_description, syntax, category_id)
-values('Tags', 'HTML tags are neat because they can help you bold with <strong></strong>, or give you a header with <h1></h1>',3)
+(topic, category_id)
+values('Tags', 3)
 
 insert into topic
-(topic, topic_description, syntax, category_id)
+(topic, topic_description, category_id)
 values('Attibutes', 'HTML attributes are tags that contain additional pieces of info "inside" the tags. Here is an example `<img src="mydog.jpg" alt="A photo of my dog.">`',3)
 
 insert into topic

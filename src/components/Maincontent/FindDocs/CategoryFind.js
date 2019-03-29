@@ -10,14 +10,14 @@ class CategoryFind extends Component {
   render() {
     const { docs } = this.props
     const { category } = this.props.match.params
-
-    const CategoryDoc = docs.find(i => i.category === category);
     
+    const CategoryDoc = docs.find(i => i.category === category);
+
     return (
       <div>
-        <CategoryView 
-        category={CategoryDoc}
-        
+        <CategoryView
+          category={ CategoryDoc }
+
         />
       </div>
     )

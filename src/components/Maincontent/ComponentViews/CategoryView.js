@@ -6,8 +6,10 @@ export default class SubtopicView extends Component {
 
   render() {
     const { category } = this.props
+    console.log(category)
     return (
       <div className='categoryView'>
+      category view
         {category.category}
         <br />
         { category.category_description }

@@ -9,7 +9,6 @@ export default class SubtopicView extends Component {
     console.log(category)
     return (
       <div className='categoryView'>
-      category view
         {category.category}
         <br />
         { category.category_description }

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import MainContent from './components/Maincontent/MainContent'
 import Mainpage from './components/Mainpage/Mainpage'
+import Text_area from './components/Usernotes/Text_area'
 
 
 
@@ -15,6 +16,7 @@ class App extends Component {
 
     return (
       <div className='App'>
+      <Text_area />
         <Navbar />
         <HashRouter>
           <Switch>

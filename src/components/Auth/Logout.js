@@ -5,9 +5,6 @@ import { connect } from 'react-redux'
 
 
 class Logout extends Component {
-
-
-
   // Logout is responsible for rendering the login component if a user clicks logout 
 
   onLogout = async () => {

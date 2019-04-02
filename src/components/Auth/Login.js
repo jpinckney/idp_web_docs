@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { upload_data } from '../../ducks/actions'
 
 class Login extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Login extends Component {
     }
     try {
       let res = await axios.post('/api/auth/login', user)
-      console.log(this)
+      console.log(res.data)
       this.props.upload_data(res.data)
       this.props.toggleLogin()
       this.props.toggleLogout()
@@ -36,9 +37,9 @@ class Login extends Component {
       alert('incorrect username or password')
     }
   }
-  
+
   render() {
-    const {username, password} = this.state
+    const { username, password } = this.state
     return (
       <div>
         <h5>Login</h5>
@@ -50,19 +51,18 @@ class Login extends Component {
           type='password'
           onChange={ e => this.onInputChange('password', e.target.value) }></input>
 
-          <div>
-            <button onClick={ this.onLogin }>Login</button>  
-            <p>or</p>
-            <button onClick={ () => {this.props.toggleLogin(); this.props.toggleRegister()} }>Register</button>
-          </div>
+        <div>
+          <button onClick={ this.onLogin }>Login</button>
+          <p>or</p>
+          <button onClick={ () => { this.props.toggleLogin(); this.props.toggleRegister() } }>Register</button>
+        </div>
 
       </div>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  
-}
+
+const mapDispatchToProps = (dispatch) => ({ upload_data })
 
 export default connect('', mapDispatchToProps)(Login)

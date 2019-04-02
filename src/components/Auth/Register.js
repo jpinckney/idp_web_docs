@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { upload_data } from '../../ducks/actions'
+
 
 class Register extends Component {
   constructor(props) {
@@ -67,8 +69,6 @@ class Register extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => {
-  
-}
+const mapDispatchToProps = (dispatch) => ({ upload_data })
 
 export default connect('', mapDispatchToProps)(Register)

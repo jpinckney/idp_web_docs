@@ -30,7 +30,7 @@ export default class Main_content extends Component {
       })
   }
 
-  // componentDidUpdate excpects prevProps as an argument. Therefore the condition must be in componentDidUpdate instead of the categoryUpdater method
+  // componentDidUpdate expects prevProps as an argument. Therefore the condition must be in componentDidUpdate instead of the categoryUpdater method
 
   componentDidUpdate(prevProps) {
     const { category } = this.props.match.params

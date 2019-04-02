@@ -17,20 +17,25 @@ module.exports = {
     session.user = user
     res.status(200).send(session.user)
   },
+  
   login: async (req, res) => {
     const { username, password } = req.body
     console.log(password)
     const { session } = req
     const db = req.app.get('db')
     let existingUser = await db.auth.login({ username })
+    console.log(existingUser)
     existingUser = existingUser[ 0 ]
     let authenticated = bcrypt.compareSync(password, existingUser.password)
+    console.log(authenticated)
     if (authenticated) {
       delete existingUser.password
       session.user = existingUser
+      console.log(session.user)
       res.status(200).send(session.user)
     }
   },
+  
   checkForUser: (req, res) => {
     console.log(req.session)
     const { user } = req.session
@@ -40,6 +45,7 @@ module.exports = {
       res.sendStatus(401)
     }
   },
+
   logout: (req, res) => {
     req.session.destroy(function () {
       res.sendStatus(200)

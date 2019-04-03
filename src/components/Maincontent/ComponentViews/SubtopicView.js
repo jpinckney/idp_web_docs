@@ -9,14 +9,22 @@ export default class SubtopicView extends Component {
     console.log(subtopic)
     return (
       <div className='subtopicView'>
-
+<h1>
         { subtopic.subtopic }
+</h1>
         {/* <br /> */}
         {/* <strong>1 sentence description of the subtopic</strong> */}
+        <p>
+
         { subtopic.subtopic_description }
+        </p>
         {/* <br /> */}
         {/* <strong>Basic use case example</strong> */}
+        <br />
+        <p>
+
         { subtopic.example }
+        </p>
         {/* <br /> */}
         { subtopic.syntax }
         {/* <br /> */}

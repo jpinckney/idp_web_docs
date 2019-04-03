@@ -8,13 +8,18 @@ export default class Main_content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: []
+      category: [],
+      showSidebar: true
     }
   }
 
 
   componentDidMount() {
     this.categorySelector()
+  }
+
+  toggleSidebar = () => {
+    this.setState({ showSidebar: !this.state.showSidebar })
   }
 
   // This method is responsible for selecting the category that the user clicked on from the mainpage icons
@@ -67,10 +72,12 @@ export default class Main_content extends Component {
           subtopic={ subtopic }
         />
 
+
         <ConditionalRenderingComponents
           { ...this.props }
         />
 
+        <button onClick={ this.toggleSidebar }>Toggle This</button>
 
       </div>
     )

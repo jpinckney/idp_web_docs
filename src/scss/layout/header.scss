@@ -1,3 +1,4 @@
+
 .navbar {
   display: flex;
   align-items: center;
@@ -6,26 +7,48 @@
   position: sticky;
   top: 0;
 
-
   .logo {
-    height: 100px;
+    height: 50px;
     width: auto;
-    padding: 15px 0 15px 0;
+    padding: 7px 0 7px 0;
+  
+
+    @media (min-width: 768px) {
+      height: 100px;
+      width: auto;
+      padding: 15px 0 15px 0;
+    }
   }
 
   .title {
-    font-size: 26px;
-    padding: 20px;
+    font-size: 13px;
+    padding: 10px;
+
+    @media (min-width: 768px) {
+      font-size: 26px;
+      padding: 20px;
+    }
   }
 
   .subtitle {
     display: block;
-    padding: 10px 0 0 135px;
+    padding: 5px 0 0 70px;
+    font-size: 9px;
+
+    @media (min-width: 768px){
+      display: block;
+      padding: 10px 0 0 135px;
+      font-size: 19px;
+    }
   }
 
   .auth {
     margin-left: auto;
-    padding: 5px;
-  }
+    padding: 1px;
 
+    @media (min-width: 768px) {
+      margin-left: auto;
+      padding: 5px;
+    }
+  }
 }

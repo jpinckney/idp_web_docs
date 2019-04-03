@@ -3,17 +3,15 @@ import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Sidebar extends Component {
+  
+
+  toggleSidebar = () => {
+    this.setState({ showSidebar: !this.state.showSidebar })
+  }
 
   render() {
     const { docs, match, topic } = this.props
     console.log(this.props)
-
-    // const topicLink = docs.find(i => i.topic === topic)
-    // const displayTopicLink = topicLink.map(catLink => {
-    //   return (
-    //     <Link to={ `/docs/${docs.topic}` }></Link>
-    //   )
-    // })
 
     let sortedDocs = {}
     docs.forEach(doc => {
@@ -46,15 +44,6 @@ class Sidebar extends Component {
       return jsxArr
     }
 
-    // const docLinksMapped = docs.map( docs => {
-    //   console.log(sortedDocs)
-    //   return (
-    //     <li >
-    //       <Link to={ `/docs/${docs.category}/${docs.topic}/${docs.subtopic}` }><br/>{docs.topic}<br />{ docs.subtopic }</Link>
-    //     </li>
-    //   )
-    // })
-
     return (
       <div className='border'>
         <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
@@ -67,7 +56,6 @@ class Sidebar extends Component {
         { makeTopicHeaders(sortedDocs) }
 
         {/* { docLinksMapped } */ }
-
       </div>
     )
   }
@@ -81,6 +69,25 @@ const mapStateToProps = reduxState => {
 
 
 export default withRouter(connect(mapStateToProps)(Sidebar))
+
+
+
+// const topicLink = docs.find(i => i.topic === topic)
+    // const displayTopicLink = topicLink.map(catLink => {
+    //   return (
+    //     <Link to={ `/docs/${docs.topic}` }></Link>
+    //   )
+    // })
+
+
+    // const docLinksMapped = docs.map( docs => {
+    //   console.log(sortedDocs)
+    //   return (
+    //     <li >
+    //       <Link to={ `/docs/${docs.category}/${docs.topic}/${docs.subtopic}` }><br/>{docs.topic}<br />{ docs.subtopic }</Link>
+    //     </li>
+    //   )
+    // })
 
 /** Pseudo Code
  * Goal: I need to have nested routes for user dynamic data selection
@@ -100,27 +107,6 @@ export default withRouter(connect(mapStateToProps)(Sidebar))
  * }
  * sortedDocs.string.map
  **/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const filteredDocLinks = docs.filter()
 

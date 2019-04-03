@@ -5,7 +5,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom'
 import MainContent from './components/Maincontent/MainContent'
 import Mainpage from './components/Mainpage/Mainpage'
 import Text_area from './components/Usernotes/Text_area'
-import OpenFormDialog from './Material-Ui/OpenFormDialog'
+import OpenFormDialog from './components/Auth/OpenFormDialog'
 
 
 
@@ -17,14 +17,16 @@ class App extends Component {
 
     return (
       <div className='App'>
-      <OpenFormDialog />
-      <Text_area />
-        <Navbar />
+        {/* <OpenFormDialog /> */ }
+        {/* <Text_area /> */ }
         <HashRouter>
+          <>
+          <Navbar />
           <Switch>
             <Route exact path='/' component={ Mainpage } />
             <Route path='/docs/:category/:topic?/:subtopic?' component={ MainContent } />
           </Switch>
+          </>
         </HashRouter>
 
       </div>

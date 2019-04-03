@@ -1,11 +1,14 @@
-.categoryHeader {
-  height: fit-content;
-  width: fit-content;
-  font-size: 50px;
-  background-color: red;
-  margin: auto;
-  margin-top: 5px;
-  border: solid 3px;
-  border-radius: 4px;
-  padding: 15px;
+@media (min-width: 300px){
+  
+  .categoryHeader {
+    height: fit-content;
+    width: fit-content;
+    font-size: 50px;
+    background-color: red;
+    margin: auto;
+    margin-top: 5px;
+    border: solid 3px;
+    border-radius: 4px;
+    padding: 15px;
+  }
 }

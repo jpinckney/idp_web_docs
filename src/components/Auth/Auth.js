@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { connect } from 'react-redux'
 import Login from './Login'
 import Logout from './Logout'
 import Register from './Register'
+import { connect } from 'react-redux'
+import { upload_data } from '../../ducks/actions'
 
 class Auth extends Component {
   constructor(props) {
@@ -17,10 +18,7 @@ class Auth extends Component {
   
 // Auth is in control of what is being rendered based on if a user is logged in or logged out
 
-
-  componentDidMount(){
-    this.checkForUser()
-  }
+  
 
   toggleLogin = () => {
     this.setState({showLogin: !this.state.showLogin});
@@ -32,7 +30,10 @@ class Auth extends Component {
     this.setState({showRegister: !this.state.showRegister});
   }
 
-  
+
+  componentDidMount() {
+    this.checkForUser()
+  }
 
   checkForUser = async () => {
     console.log('hit')
@@ -49,6 +50,9 @@ class Auth extends Component {
       }
     }
   }
+  
+
+  
 
   render(){
     return(
@@ -87,9 +91,7 @@ const mapStateToProps = reduxState => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  
-}
+const mapDispatchToProps = (dispatch) => ({ upload_data })
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth)

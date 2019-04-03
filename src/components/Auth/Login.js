@@ -2,17 +2,33 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { upload_data } from '../../ducks/actions'
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      open: false,
       username: '',
       password: ''
     }
   }
 
   // Login is responsible for displaying the login and register if a user is not logged in
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
 
   onInputChange(input, val) {
     this.setState({
@@ -42,7 +58,33 @@ class Login extends Component {
     const { username, password } = this.state
     return (
       <div>
-        <h5>Login</h5>
+        <Button onClick={this.onLogin}>Login</Button>
+        <Button onClick={this.onLogin}>Register</Button>
+        {/* <Dialog>
+          <DialogTitle id="form-dialog-title">Login</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Content text
+        </DialogContentText>
+            <TextField
+              onChange={ e => this.onInputChange('username', e.target.value) }
+              autoFocus
+              margin="dense"
+              label="Username"
+              type="email"
+              value={ username }
+              fullWidth>
+
+            </TextField>
+          </DialogContent>
+        </Dialog> */}
+
+
+{/**
+* ! below is functionality for original login / register
+*/}
+
+        {/* <h5>Login</h5>
         <input placeholder='Username..'
           value={ username }
           onChange={ e => this.onInputChange('username', e.target.value) }></input>
@@ -55,7 +97,7 @@ class Login extends Component {
           <button onClick={ this.onLogin }>Login</button>
           <p>or</p>
           <button onClick={ () => { this.props.toggleLogin(); this.props.toggleRegister() } }>Register</button>
-        </div>
+        </div> */}
 
       </div>
     )

@@ -18,9 +18,11 @@ class Mainpage extends Component {
     this.props.getAllData()
   }
 
+ 
+
   render() {
     return (
-      <div >
+      <div className='mainpageContainer'>
 
         <div className='devicons'>
 

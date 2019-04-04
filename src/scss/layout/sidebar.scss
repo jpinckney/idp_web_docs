@@ -1,14 +1,37 @@
- .border {
-   margin-top: 5px;
-   border-top: solid 3px;
-   border-right: solid 3px;
-   border-bottom: solid 3px;
-   border-radius: 4px;
-   padding: 15px;
-   width: fit-content;
+.border {
+  margin-top: 5px;
+  border-top: solid 3px;
+  border-right: solid 3px;
+  border-bottom: solid 3px;
+  border-radius: 4px;
+  padding: 15px;
+  width: fit-content;
   //  height: calc(100% - #{$header-height});
-   text-align: center;
- }
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+
+// .unnamedDiv {
+// background-color: blue;
+// border: solid 3px;
+// }
+
+.unnamedDiv .border {
+
+  transform: translateY(130%);
+  transition-timing-function: ease-in;
+  transition: 0.2s; 
+}
+
+.unnamedDiv .border-is-shown {
+  transition: 0.25s;
+  transition-timing-function: ease-out;
+  
+  transform: translateY(0);
+  opacity: 1;
+}
+
 
 .permanentLinks {
   font-size: 50px;
@@ -18,7 +41,6 @@
   font-size: 35px;
 }
 
-.subtopicLinks{
+.subtopicLinks {
   font-size: 25px;
 }
-

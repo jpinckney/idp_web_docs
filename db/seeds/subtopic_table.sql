@@ -24,6 +24,10 @@ insert into subtopic
 (subtopic, subtopic_description, syntax, syntax_explaination, example,topic_id)
 values('object.create()', 'what is object.create()?', 'Object.create(proto, [propertiesObject])', 'well maybe ill keep the syntax explaination', 'examples', 1);
 
+insert into subtopic
+(subtopic, syntax, syntax_explaination, topic_id)
+values('test object subtopic', 'test syntax', 'test syntax explaination, but im missing the subtopic.example and the subtopic.subtopic_description', 1)
+
 /** 
 * ! Arrays
 */

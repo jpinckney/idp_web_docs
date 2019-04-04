@@ -2,12 +2,8 @@ import React, { Component } from 'react'
 import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-class Sidebar extends Component {
-  
 
-  toggleSidebar = () => {
-    this.setState({ showSidebar: !this.state.showSidebar })
-  }
+class Sidebar extends Component {
 
   render() {
     const { docs, match, topic } = this.props
@@ -45,17 +41,27 @@ class Sidebar extends Component {
     }
 
     return (
-      <div className='border'>
-        <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
+      <div className='unnamedDiv' >
+        { this.props.showSidebar &&
 
-        {/** ! Permanent Links */ }
-        <Link to={ `/docs/react` }><h5>React</h5></Link>
-        <Link to={ `/docs/javascript` }><h5>Javascript</h5></Link>
-        <Link to={ `/docs/html` }><h5>HTML</h5></Link>
-        {/** ! Permanent Links */ }
-        { makeTopicHeaders(sortedDocs) }
+          <div className='border'>
 
-        {/* { docLinksMapped } */ }
+            <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
+
+            {/** ! Permanent Links */ }
+            <Link to={ `/docs/react` }><h5>React</h5></Link>
+            <Link to={ `/docs/javascript` }><h5>Javascript</h5></Link>
+            <Link to={ `/docs/html` }><h5>HTML</h5></Link>
+            {/** ! Permanent Links */ }
+            { makeTopicHeaders(sortedDocs) }
+
+            {/* { docLinksMapped } */ }
+          </div>
+        }
+         {/* <p><i className='arrowRight' onClick={ this.props.toggleSidebar }></i></p>
+        
+      <i className='arrowLeft' onClick={ this.props.toggleSidebar }></i>  */}
+      <button className='sidebarButton' onClick={ this.props.toggleSidebar }>toggle</button>
       </div>
     )
   }

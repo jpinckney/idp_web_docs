@@ -67,6 +67,8 @@ export default class Main_content extends Component {
         />
 
         <Sidebar
+          showSidebar ={ this.state.showSidebar }
+          toggleSidebar={ this.toggleSidebar }
           category={ category }
           topic={ topic }
           subtopic={ subtopic }
@@ -77,7 +79,6 @@ export default class Main_content extends Component {
           { ...this.props }
         />
 
-        <button onClick={ this.toggleSidebar }>Toggle This</button>
 
       </div>
     )

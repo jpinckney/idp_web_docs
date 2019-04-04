@@ -5,6 +5,22 @@ import { connect } from 'react-redux'
 
 class Sidebar extends Component {
 
+  doShow = () => {
+    if (this.props.showSidebar) {
+      return {
+        animation: ' 1s ease 0s 1 slideOutFromLeft ',
+        left: '-210px'
+        // opacity: 0
+      }
+    } else {
+      return {
+        animation: ' 1s ease 0s 1 slideInFromLeft',
+        // opacity: 1
+        left: 0
+      }
+    }
+  }
+
   render() {
     const { docs, match, topic } = this.props
     console.log(this.props)
@@ -28,7 +44,7 @@ class Sidebar extends Component {
                 docsObj[ key ].map(doc => {
                   return (
                     <li >
-                      <Link to={ `/docs/${doc.category}/${doc.topic}/${doc.subtopic}` }>{ doc.subtopic }</Link>
+                      <Link className='sidebarLink' to={ `/docs/${doc.category}/${doc.topic}/${doc.subtopic}` }>{ doc.subtopic }</Link>
                     </li>
                   )
                 })
@@ -42,26 +58,26 @@ class Sidebar extends Component {
 
     return (
       <div className='unnamedDiv' >
-        { this.props.showSidebar &&
+        {/* { this.props.showSidebar &&  */ }
+        {/* {JSON.stringify(this.doShow())} */ }
+        <div style={ this.doShow() } className='border'>
 
-          <div className='border'>
+          <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
 
-            <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
+          {/** ! Permanent Links */ }
+          <Link to={ `/docs/react` }><h5 className='titleSubjects'>React</h5></Link>
+          <Link to={ `/docs/javascript` }><h5 className='titleSubjects'>Javascript</h5></Link>
+          <Link to={ `/docs/html` }><h5 className='titleSubjects' >HTML</h5></Link>
+          {/** ! Permanent Links */ }
+          { makeTopicHeaders(sortedDocs) }
 
-            {/** ! Permanent Links */ }
-            <Link to={ `/docs/react` }><h5>React</h5></Link>
-            <Link to={ `/docs/javascript` }><h5>Javascript</h5></Link>
-            <Link to={ `/docs/html` }><h5>HTML</h5></Link>
-            {/** ! Permanent Links */ }
-            { makeTopicHeaders(sortedDocs) }
-
-            {/* { docLinksMapped } */ }
-          </div>
-        }
-         {/* <p><i className='arrowRight' onClick={ this.props.toggleSidebar }></i></p>
+          {/* { docLinksMapped } */ }
+        </div>
+        {/* } */ }
+        {/* <p><i className='arrowRight' onClick={ this.props.toggleSidebar }></i></p>
         
       <i className='arrowLeft' onClick={ this.props.toggleSidebar }></i>  */}
-      <button className='sidebarButton' onClick={ this.props.toggleSidebar }>toggle</button>
+        <button className='sidebarButton' onClick={ this.props.toggleSidebar }>toggle</button>
       </div>
     )
   }

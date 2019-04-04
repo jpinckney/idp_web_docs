@@ -12,4 +12,3 @@ export default class CategoryHeader extends Component {
     )
   }
 }
-

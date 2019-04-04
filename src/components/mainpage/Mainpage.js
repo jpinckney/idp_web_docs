@@ -7,10 +7,7 @@ import Css from '../../icons/Css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getAllData } from '../../ducks/actions'
-
-
-
-// https://icongr.am/devicon
+// import everyoneCanCode from '../../icons/everyoneCanCode.jpg'
 
 class Mainpage extends Component {
 
@@ -18,15 +15,13 @@ class Mainpage extends Component {
     this.props.getAllData()
   }
 
- 
-
   render() {
     return (
       <div className='mainpageContainer'>
 
         <div className='devicons'>
-
-          <Link to={ '/docs/reactjs' }>
+        {/* <img className='banner' src={everyoneCanCode} alt='banner'></img> */}
+          <Link to={ '/docs/react' }>
             <Reacted />
           </Link>
 
@@ -50,7 +45,6 @@ class Mainpage extends Component {
   }
 }
 
-
 const mapStateToProps = reduxState => {
   return {
     docs: reduxState.docs
@@ -60,6 +54,5 @@ const mapStateToProps = reduxState => {
 const mapDispatchToProps = dispatch => ({
   getAllData: () => dispatch(getAllData())
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Mainpage)

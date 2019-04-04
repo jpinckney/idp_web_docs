@@ -84,13 +84,3 @@ export default class Main_content extends Component {
     )
   }
 }
-
-
-
-
-
-
-
-
-
-

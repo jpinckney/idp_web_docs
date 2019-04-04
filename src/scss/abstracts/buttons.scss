@@ -1,22 +1,40 @@
-i {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  .arrowRight {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-  }
-  .arrowLeft {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-  }
-}
+// i {
+//   border: solid black;
+//   border-width: 0 3px 3px 0;
+//   display: inline-block;
+//   padding: 3px;
+//   .arrowRight {
+//     transform: rotate(-45deg);
+//     -webkit-transform: rotate(-45deg);
+//   }
+//   .arrowLeft {
+//     transform: rotate(135deg);
+//     -webkit-transform: rotate(135deg);
+//   }
+// }
 
 
 .sidebarButton{
+  color: darkred;
+  border-top: yellow 5px solid;
+  border-right: red 5px solid;
+  border-left: purple 5px solid;
+  border-bottom: blue 5px solid;
+  background: rgb(240, 179, 184);
   position: relative;
-  right: 2px;
-  top: 50%;
+  right: -1px;
+  top:-55px;
   border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  font-size: 8px;
+
+  @media (min-width: 768px){
+    height: 70px;
+    width: 70px;
+    top:-70px;
+    right: -5px;
+
+  }
+
 }

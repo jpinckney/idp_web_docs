@@ -31,4 +31,3 @@ const mapStateToProps = reduxState => {
 }
 
 export default withRouter(connect(mapStateToProps)(CategoryFind))
-

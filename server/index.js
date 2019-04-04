@@ -5,7 +5,7 @@ const express = require('express'),
   massive = require('massive'),
   ctrl = require('./controller/login'),
   ctrl_2 = require('./controller/controller'),
-  notes = require('./controller/notes')
+  notes_controller = require('./controller/notes_controller')
 pg = require('pg')
 pgSession = require('connect-pg-simple')(session)
 
@@ -55,7 +55,7 @@ app.get('/api/docs', ctrl_2.getAllData)
 app.get('/api/docs/getData/:category/:topic/:subtopic', ctrl_2.getData)
 
 // ! Notes
-app.post('/api/docs/createNote', notes.createNote)
-app.delete('/api/docs/deleteNote/:note_id', notes.deleteNote)
-app.put('/api/docs/updateNote/:note_id', notes.updateNote)
-app.get('/api/docs/getUserNotes', notes.getUserNotes)
+app.post('/api/docs/createNote', notes_controller.createNote)
+app.delete('/api/docs/deleteNote/:note_id', notes_controller.deleteNote)
+app.put('/api/docs/updateNote/:note_id', notes_controller.updateNote)
+app.get('/api/docs/getUserNotes', notes_controller.getUserNotes)

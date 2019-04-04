@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, GET_USER_NOTES } from './types'
+import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, GET_USER_NOTES, UPDATE_NOTE, DELETE_NOTE } from './types'
 import axios from 'axios'
 
 // This is being used in Mainpage.js
@@ -14,8 +14,9 @@ export const getAllData = () => dispatch => {
 }
 
 // Create a Note
-export const createNote = () => dispatch => {
-  axios.post('/api/docs/createNote').then(resp => {
+export const createNote = (users_notes) => dispatch => {
+  axios.post('/api/docs/createNote', { users_notes }).then(resp => {
+    console.log(resp.data)
     dispatch({
       type: CREATE_NOTE,
       payload: resp.data
@@ -24,17 +25,26 @@ export const createNote = () => dispatch => {
 }
 
 // Update a Note
-export const updateNote = () => dispatch => {
-  axios.put('/api/docs/updateNote/:note_id').then(resp => {
+export const updateNote = (user_note, note_id) => dispatch => {
+  // const { note_id } = this.props.match.params
+  console.log(note_id)
+  axios.put(`/api/docs/updateNote/${note_id}`, { user_note }).then(resp => {
     dispatch({
-      
+      type: UPDATE_NOTE,
+      payload: resp.data
     })
   })
 }
 
 // Delete a Note
-export const deleteNote = () => dispatch => {
-  axios.delete('/api/docs/updateNote/:note_id')
+export const deleteNote = (note_id) => dispatch => {
+  // const { note_id } = this.props.match.params
+  axios.delete(`/api/docs/updateNote/${note_id}`, { note_id }).then(resp => {
+    dispatch({
+      type: DELETE_NOTE,
+      payload: resp.data
+    })
+  })
 }
 
 // Get all User Notes
@@ -46,7 +56,6 @@ export const getUserNotes = () => dispatch => {
     })
   })
 }
-
 
 // * ./src/components/Auth/
 // ! Login / Register / Logout / Auth use this action

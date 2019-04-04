@@ -7,6 +7,7 @@ import Mainpage from './components/Mainpage/Mainpage'
 import Text_area from './components/Usernotes/Text_area'
 import DisplayNotes from './components/Auth/Notes/DisplayNotes'
 import NoteForm from './components/Auth/Notes/NoteForm'
+import WorldClock from './WorldClock'
 
 
 
@@ -19,6 +20,8 @@ class App extends Component {
     return (
       <div className='App'>
         {/* <Text_area /> */ }
+        <WorldClock />
+        <br/>
         <NoteForm />
         <HashRouter>
           <>

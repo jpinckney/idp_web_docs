@@ -4,11 +4,9 @@ const initialState = {
   id: 0,
   username: '',
   email: '',
-  // note_category: '',
-  // note_topic: '',
-  // note_subtopic: '',
   user_notes: [],
-  docs: []
+  docs: [],
+  text_area: ''
 }
 
 
@@ -21,6 +19,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, user_notes: payload }
     case UPLOAD_DATA:
       return { ...state, ...payload }
+      case CREATE_NOTE:
+      return {...state, user_notes: payload}
     default:
       return state
   }

@@ -19,10 +19,10 @@ const app = express()
 app.use(express.json())
 app.use( express.static( `${__dirname}/../build` ) );
 app.use(session({
-  store: new pgSession({
-    pool: pgPool,
-    pruneSessionInterval: 60 * 60 * 24
-  }),
+  // store: new pgSession({
+  //   pool: pgPool,
+  //   pruneSessionInterval: 60 * 60 * 24
+  // }),
   secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: true,

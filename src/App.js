@@ -3,7 +3,7 @@ import './scss/App.scss';
 import Navbar from './components/Navbar/Navbar'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import MainContent from './components/Maincontent/MainContent'
-import Mainpage from './components/Mainpage/Mainpage'
+import Mainpage from './components/mainpage/Mainpage'
 import Text_area from './components/Usernotes/Text_area'
 import DisplayNotes from './components/Auth/Notes/DisplayNotes'
 import NoteForm from './components/Auth/Notes/NoteForm'

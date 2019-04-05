@@ -1,5 +1,9 @@
 .sidebar-wrapper {
+  display: flex;
   position: relative;
+  min-width: $sidebar-width;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .sidebar {
@@ -9,10 +13,12 @@
     display: inline;
     background: white;
     border-right: solid 1px #fafafa;
-    padding: 15px;
-    width: $sidebar-width;
-    height: calc(100% - #{$header-height});
     text-align: left;
+  }
+
+  li {
+    padding: 5px;
+    width: 100%;
   }
 }
 

@@ -36,4 +36,11 @@
     color: white;
     height: 30px;
     width: 30px;
+    margin-left: auto;
+    outline: none;
+    margin-right: 20px;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 }

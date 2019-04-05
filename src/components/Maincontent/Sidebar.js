@@ -1,31 +1,16 @@
 import React, { Component } from 'react'
 import { Link, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Auth from '../Auth/Auth'
 
 
 class Sidebar extends Component {
 
-  doShow = () => {
-    if (this.props.showSidebar) {
-      return {
-        animation: ' 1s ease 0s 1 slideOutFromLeft ',
-        left: '-210px'
-        // opacity: 0
-      }
-    } else {
-      return {
-        animation: ' 1s ease 0s 1 slideInFromLeft',
-        // opacity: 1
-        left: 0
-      }
-    }
-  }
-
   render() {
     const { docs, match, topic } = this.props
-    console.log(this.props)
 
     let sortedDocs = {}
+
     docs.forEach(doc => {
       if (!sortedDocs[ doc.topic ]) {
         sortedDocs[ doc.topic ] = []
@@ -33,53 +18,44 @@ class Sidebar extends Component {
       sortedDocs[ doc.topic ].push(doc)
     })
 
-    function makeTopicHeaders(docsObj) {
-      let jsxArr = []
-      for (var key in docsObj) {
-        jsxArr.push(
-          <>
-            <h2 style={ { fontSize: "25px" } }>{ docsObj[ key ][ 0 ].topic }</h2>
-            <>
-              {
-                docsObj[ key ].map(doc => {
-                  return (
-                    <li >
-                      <Link className='sidebarLink' to={ `/docs/${doc.category}/${doc.topic}/${doc.subtopic}` }>{ doc.subtopic }</Link>
-                    </li>
-                  )
-                })
-              }
-            </>
-          </>
-        )
-      }
-      return jsxArr
-    }
 
     return (
-      <div className='unnamedDiv' >
-        {/* { this.props.showSidebar &&  */ }
-        {/* {JSON.stringify(this.doShow())} */ }
-        <div style={ this.doShow() } className='border'>
+     
+      <div className='sidebar-wrapper'>
+      
+        <div className='sidebar' >
+            <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
 
-          <Route path={ `${match.path}/:category/:topic?/subtopic?` } />
+            <Link to={ `/docs/react` }><h5 className='titleSubjects'>React</h5></Link>
+            <Link to={ `/docs/javascript` }><h5 className='titleSubjects'>Javascript</h5></Link>
+            <Link to={ `/docs/html` }><h5 className='titleSubjects' >HTML</h5></Link>
 
-          {/** ! Permanent Links */ }
-          <Link to={ `/docs/react` }><h5 className='titleSubjects'>React</h5></Link>
-          <Link to={ `/docs/javascript` }><h5 className='titleSubjects'>Javascript</h5></Link>
-          <Link to={ `/docs/html` }><h5 className='titleSubjects' >HTML</h5></Link>
-          {/** ! Permanent Links */ }
-          { makeTopicHeaders(sortedDocs) }
+            <Auth />
 
-          {/* { docLinksMapped } */ }
+            { this.makeTopicHeaders(sortedDocs) }
         </div>
-        {/* } */ }
-        {/* <p><i className='arrowRight' onClick={ this.props.toggleSidebar }></i></p>
-        
-      <i className='arrowLeft' onClick={ this.props.toggleSidebar }></i>  */}
-        <button className='sidebarButton' onClick={ this.props.toggleSidebar }>toggle</button>
       </div>
     )
+  }
+
+  makeTopicHeaders(docsByTopic) {
+    let jsxArr = []
+    
+    for (var topic in docsByTopic) {
+      jsxArr.push(
+        <>
+          <li className='sidebar-section-header'>{ topic }</li>
+            { 
+              docsByTopic[ topic ].map(doc => (
+                <li >
+                  <Link className='sidebarLink' to={ `/docs/${doc.category}/${doc.topic}/${doc.subtopic}` }>{ doc.subtopic }</Link>
+                </li>
+              ))
+            }
+        </>
+      )
+    }
+    return jsxArr
   }
 }
 

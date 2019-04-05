@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, GET_USER_NOTES, UPDATE_NOTE, DELETE_NOTE } from './types'
+import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, GET_USER_NOTES, UPDATE_NOTE, DELETE_NOTE, TOGGLE_MOBILE_NAV} from './types'
 import axios from 'axios'
 
 // This is being used in Mainpage.js
@@ -67,7 +67,11 @@ export const upload_data = (data) => dispatch => {
   }
 }
 
-
+export const toggleMobileNav = () => {
+  return {
+    type: TOGGLE_MOBILE_NAV
+  }
+}
 
 
 

@@ -13,31 +13,4 @@
 //   }
 // }
 
-.sidebarButton {
-  color: darkred;
-  border-top: yellow 5px solid;
-  border-right: red 5px solid;
-  border-left: saddlebrown 5px solid;
-  border-bottom: blue 5px solid;
-  background: rgb(240, 179, 184);
-  position: relative;
-  right: -1px;
-  top: -55px;
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  font-size: 8px;
 
-  @media (min-width: 768px) {
-    border-top: cadetblue 10px solid;
-    border-right: olivedrab 10px solid;
-    border-left: purple 10px solid;
-    border-bottom: blue 10px solid;
-    background: lemonchiffon;
-    height: 70px;
-    width: 70px;
-    top: -70px;
-    right: -5px;
-    font-size: 13px;
-  }
-}

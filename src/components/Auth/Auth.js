@@ -56,10 +56,10 @@ class Auth extends Component {
 
   render(){
     return(
-      <div className='auth'>
+      <>
         {this.props.username === '' 
         ?
-          <div>
+          <>
             {this.state.showLogin && 
               <Login 
                 toggleLogin={this.toggleLogin} 
@@ -71,15 +71,15 @@ class Auth extends Component {
             toggleLogin={this.toggleLogin}
             toggleRegister={this.toggleRegister}
             toggleLogout={this.toggleLogout}/>}
-          </div>
+          </>
         :
-          <div>
+          <>
             {this.state.showLogout && <Logout 
             toggleLogin={this.toggleLogin}
             toggleLogout={this.toggleLogout}/>}
-          </div>
+          </>
         }
-      </div>
+      </>
     )
   }
 }

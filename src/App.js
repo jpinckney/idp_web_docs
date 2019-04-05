@@ -20,9 +20,9 @@ class App extends Component {
     return (
       <div className='App'>
         {/* <Text_area /> */ }
-        <WorldClock />
+        {/* <WorldClock />
         <br/>
-        <NoteForm />
+        <NoteForm /> */}
         <HashRouter>
           <>
           <Navbar />

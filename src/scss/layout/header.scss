@@ -5,6 +5,8 @@
   background-color: $primary-color;
   color: black;
   position: sticky;
+  z-index: 1;
+  height: $header-height;
   top: 0;
 
   .logo {
@@ -14,7 +16,7 @@
   
 
     @media (min-width: 768px) {
-      height: 100px;
+      height: 70px;
       width: auto;
       padding: 15px 0 15px 0;
     }

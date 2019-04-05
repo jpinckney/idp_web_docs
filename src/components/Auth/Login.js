@@ -45,7 +45,7 @@ class Login extends Component {
   render() {
     const { username, password } = this.state
     return (
-      <div>
+      <div className='login-buttons'>
         <Button onClick={this.onLogin}>Login</Button>
         <Button onClick={this.onLogin}>Register</Button>
         

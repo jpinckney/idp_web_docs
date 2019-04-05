@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import CategoryHeader from './CategoryHeader'
 import Sidebar from './Sidebar';
+import MobileSidebar from '../MobileSidebar';
 import ConditionalRenderingComponents from './ConditionalRenderingComponents'
 
 export default class Main_content extends Component {
@@ -12,7 +13,6 @@ export default class Main_content extends Component {
       showSidebar: true
     }
   }
-
 
   componentDidMount() {
     this.categorySelector()
@@ -26,7 +26,7 @@ export default class Main_content extends Component {
 
   categorySelector = () => {
     const { category } = this.props.match.params
-    console.log({ category })
+
     axios.get(`/api/docs/${category}`)
       .then(res => {
         this.setState({
@@ -55,31 +55,35 @@ export default class Main_content extends Component {
       })
   }
 
-
   render() {
     console.log(this.state.category)
     const { category, topic, subtopic } = this.props.match.params
 
     return (
       <div>
-        <CategoryHeader
-          category={ category }
-        />
+        <MobileSidebar />
 
-        <Sidebar
-          showSidebar ={ this.state.showSidebar }
-          toggleSidebar={ this.toggleSidebar }
-          category={ category }
-          topic={ topic }
-          subtopic={ subtopic }
-        />
-
-
-        <ConditionalRenderingComponents
-          { ...this.props }
-        />
+        <div className="main">
+          <Sidebar
+            showSidebar={ this.state.showSidebar }
+            toggleSidebar={ this.toggleSidebar }
+            category={ category }
+            topic={ topic }
+            subtopic={ subtopic }
+          />
 
 
+          <div className='content'>
+            <CategoryHeader
+              category={ category }
+            />
+
+
+            <ConditionalRenderingComponents
+              { ...this.props }
+            />
+          </div>
+        </div>
       </div>
     )
   }

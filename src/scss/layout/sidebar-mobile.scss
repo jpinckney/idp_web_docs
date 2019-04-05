@@ -1,0 +1,39 @@
+.sidebar-mobile {
+    position: absolute;
+    transform: translateY(-2000px);
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    transition: all .3s ease-in-out;
+
+    li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .login-buttons {
+        display: flex;
+        
+        button {
+            flex: 0 0 50%;
+            padding: 15px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    &.open {
+        transform: translateY(0);
+    }
+}
+
+
+.mobile-nav-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 30px;
+}

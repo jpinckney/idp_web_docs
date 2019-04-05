@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, GET_USER_NOTES, UPDATE_NOTE, DELETE_NOTE, TOGGLE_MOBILE_NAV} from './types'
+import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, GET_USER_NOTES, UPDATE_NOTE, DELETE_NOTE, TOGGLE_MOBILE_NAV } from './types'
 import axios from 'axios'
 
 // This is being used in Mainpage.js
@@ -27,8 +27,9 @@ export const createNote = (users_notes) => dispatch => {
 // Update a Note
 export const updateNote = (user_note, note_id) => dispatch => {
   // const { note_id } = this.props.match.params
-  console.log(note_id)
-  axios.put(`/api/docs/updateNote/${note_id}`, { user_note }).then(resp => {
+  console.log(note_id.user_notes_id, user_note)
+  axios.put(`/api/docs/updateNote/${note_id.user_notes_id}`, { user_note }).then(resp => {
+    console.log(resp)
     dispatch({
       type: UPDATE_NOTE,
       payload: resp.data
@@ -37,9 +38,11 @@ export const updateNote = (user_note, note_id) => dispatch => {
 }
 
 // Delete a Note
-export const deleteNote = (note_id) => dispatch => {
+export const deleteNote = (note) => dispatch => {
   // const { note_id } = this.props.match.params
-  axios.delete(`/api/docs/updateNote/${note_id}`, { note_id }).then(resp => {
+  console.log(note)
+  const {user_notes_id} = note
+  axios.delete(`/api/docs/deleteNote/${user_notes_id}`).then(resp => {
     dispatch({
       type: DELETE_NOTE,
       payload: resp.data

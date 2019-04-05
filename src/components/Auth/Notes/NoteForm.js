@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { upload_data, createNote, updateNote, deleteNote } from '../../../ducks/actions'
+import DisplayNotes from './DisplayNotes'
 
 class NoteForm extends Component {
   constructor(props) {
@@ -16,9 +17,17 @@ class NoteForm extends Component {
       text_area: val
     })
   }
-
   render() {
-    return (
+    const mappedUser_Notes = this.props.user_notes.map(note => {
+      return (
+        <DisplayNotes 
+        key={note.user_notes_id}
+        note={note}
+        state={this.state}
+        />
+        )
+      })
+      return (
       <div>
         <h1>Add a Note</h1>
         <form >
@@ -40,12 +49,14 @@ class NoteForm extends Component {
             <textarea value={ this.state.text_area } onChange={ (e) => this.onChangeHandler(e.target.value) } placeholder='Type your note here'></textarea>
             <button onClick={ () => this.props.createNote(this.state.text_area) }>Save</button>
             <button>Cancel</button>
-            <button onClick={()=>this.props.updateNote(this.state.text_area)}>Update</button>
-            <button onClick={()=>this.props.deleteNote()}>Update</button>
+            
+            
           </div>
         </form>
 
+        {mappedUser_Notes}
       </div>
+
     )
   }
 }

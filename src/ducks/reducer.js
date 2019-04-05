@@ -1,4 +1,4 @@
-import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, TOGGLE_MOBILE_NAV } from './types'
+import { GET_ALL_DATA, CREATE_NOTE, UPLOAD_DATA, TOGGLE_MOBILE_NAV, UPDATE_NOTE, DELETE_NOTE } from './types'
 
 const initialState = {
   id: 0,
@@ -30,6 +30,12 @@ export default function reducer(state = initialState, action) {
     case TOGGLE_MOBILE_NAV: {
       const mobileNavIsVisible = state.mobileNavIsVisible;
       return { ...state, mobileNavIsVisible: !mobileNavIsVisible }
+    }
+    case UPDATE_NOTE: {
+      return {...state, user_notes: payload}
+    }
+    case DELETE_NOTE: {
+      return {...state, user_notes: payload}
     }
       
     default:

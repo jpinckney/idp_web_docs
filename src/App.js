@@ -19,18 +19,18 @@ class App extends Component {
 
     return (
       <div className='App'>
-        {/* <Text_area /> */ }
+        {/* <Text_area /> */}
         {/* <WorldClock />
-        <br/>
+        <br />
         <NoteForm /> */}
         <HashRouter>
           <>
-          <Navbar />
-          <Switch>
-            <Route exact path='/' component={ Mainpage } />
-            <Route path='/docs/:category/:topic?/:subtopic?' component={ MainContent } />
-            <Route path='/mynotes' component={DisplayNotes} />
-          </Switch>
+            <Navbar />
+            <Switch>
+              <Route exact path='/' component={ Mainpage } />
+              <Route path='/docs/:category/:topic?/:subtopic?' component={ MainContent } />
+              <Route path='/mynotes' component={ DisplayNotes } />
+            </Switch>
           </>
         </HashRouter>
 
